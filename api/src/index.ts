@@ -1,7 +1,13 @@
 import express from "express";
+import mongoose from 'mongoose';
 
-const app = express();
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017')
+  .then(() => {
+    const app = express();
+    const port = 8080;
 
-app.listen(8080, () => {
-  console.log("Server is running on http://localhost:8080")
-});
+    app.listen(port, () => {
+      console.log("Server is running successfully on port", port);
+    });
+  })
+  .catch(err => console.error('could not connect to mongodb', err));
