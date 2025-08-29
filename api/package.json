@@ -10,8 +10,7 @@
     "docker:up": "docker compose up --build",
     "docker:down": "docker compose down",
     "docker:logs": "docker compose logs -f api",
-    "docker:restart": "docker compose restart api",
-    "docker:clean": "docker compose down -v && docker system prune -f"
+    "docker:restart": "docker compose restart api"
   },
   "devDependencies": {
     "@eslint/css": "^0.10.0",
@@ -29,7 +28,9 @@
     "typescript-eslint": "^8.40.0"
   },
   "dependencies": {
+    "@types/multer": "^2.0.0",
     "express": "^5.1.0",
-    "mongoose": "^8.17.2"
+    "mongoose": "^8.17.2",
+    "multer": "^2.0.2"
   }
 }

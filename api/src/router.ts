@@ -2,7 +2,7 @@ import { Router } from "express";
 import { listCategories } from "./app/useCases/categories/listCategories.ts";
 import { createCategory } from "./app/useCases/categories/createCategory.ts";
 import { listProducts } from "./app/useCases/products/listProducts.ts";
-import { createProduct } from "./app/useCases/products/createProduct.ts";
+import { createProduct, uploadProductImage } from "./app/useCases/products/createProduct.ts";
 
 export const router = Router();
 
@@ -15,8 +15,8 @@ router.post("/categories", createCategory);
 // List Products
 router.get("/products", listProducts);
 
-// Create Product
-router.post("/products", createProduct);
+// Create Product (with image upload middleware)
+router.post("/products", uploadProductImage, createProduct as any);
 
 // Get Products by Category
 router.get("/categories/:categoryId/products", (req, res) => {

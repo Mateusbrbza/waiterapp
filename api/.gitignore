@@ -3,3 +3,4 @@ dist
 .env
 docker-compose.yml.backup
 Dockerfile.backup
+uploads/
