@@ -8,7 +8,10 @@
     "dev": "nodemon src/index.ts",
     "start": "node dist/index.js",
     "docker:up": "docker compose up --build",
-    "docker:down": "docker compose down"
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f api",
+    "docker:restart": "docker compose restart api",
+    "docker:clean": "docker compose down -v && docker system prune -f"
   },
   "devDependencies": {
     "@eslint/css": "^0.10.0",

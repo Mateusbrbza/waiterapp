@@ -19,16 +19,26 @@ router.get("/products", listProducts);
 router.post("/products", createProduct);
 
 // Get Products by Category
-router.get("/categories/:categoryId/products");
+router.get("/categories/:categoryId/products", (req, res) => {
+  res.json({ message: "Get products by category - TODO: implement handler" });
+});
 
 // List Orders
-router.get("/orders");
+router.get("/orders", (req, res) => {
+  res.json({ message: "List orders - TODO: implement handler" });
+});
 
 // Create Order
-router.post("/orders");
+router.post("/orders", (req, res) => {
+  res.json({ message: "Create order - TODO: implement handler" });
+});
 
 // Change order Status
-router.patch("/orders/:orderId/status");
+router.patch("/orders/:orderId/status", (req, res) => {
+  res.json({ message: "Change order status - TODO: implement handler" });
+});
 
 // Delete/Cancel order
-router.delete("/orders/:orderId");
+router.delete("/orders/:orderId", (req, res) => {
+  res.json({ message: "Delete order - TODO: implement handler" });
+});
