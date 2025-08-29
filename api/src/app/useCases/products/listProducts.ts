@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { Category } from "../../models/Category.ts";
+import { Product } from "../../models/Product.ts";
 
-export async function listCategories(req: Request, res: Response) {
+export async function listProducts(req: Request, res: Response) {
   try {
-    const categories = await Category.find();
+    const categories = await Product.find();
 
     res.status(200).json(categories);
   } catch (error) {

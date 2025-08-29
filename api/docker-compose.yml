@@ -23,11 +23,10 @@ services:
       - mongo
     environment:
       - NODE_ENV=development
-      - MONGODB_URI=mongodb://mongo:27017
+      - MONGODB_URI=mongodb://admin:password@mongo:27017
     networks:
       - app-network
     volumes:
-      - .:/app
       - /app/node_modules
 
 volumes:

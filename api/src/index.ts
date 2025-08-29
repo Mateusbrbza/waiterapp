@@ -1,9 +1,8 @@
 import express from "express";
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
+import { router } from "./router.ts";
 
-import { router } from "./router";
-
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017')
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017")
   .then(() => {
     const app = express();
     const port = 8080;
@@ -15,4 +14,4 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017')
       console.log("Server is running successfully on port", port);
     });
   })
-  .catch(err => console.error('could not connect to mongodb', err));
+  .catch((err) => console.error("could not connect to mongodb", err));

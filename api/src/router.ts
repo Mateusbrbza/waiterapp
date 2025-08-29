@@ -1,6 +1,8 @@
 import { Router } from "express";
-import { listCategories } from "./app/useCases/categories/listCategories";
-import { createCategory } from "./app/useCases/categories/createCategory";
+import { listCategories } from "./app/useCases/categories/listCategories.ts";
+import { createCategory } from "./app/useCases/categories/createCategory.ts";
+import { listProducts } from "./app/useCases/products/listProducts.ts";
+import { createProduct } from "./app/useCases/products/createProduct.ts";
 
 export const router = Router();
 
@@ -11,36 +13,22 @@ router.get("/categories", listCategories);
 router.post("/categories", createCategory);
 
 // List Products
-router.get("/products", (req, res) => {
-  res.send('ok');
-});
+router.get("/products", listProducts);
 
 // Create Product
-router.post("/products", (req, res) => {
-  res.send('ok');
-});
+router.post("/products", createProduct);
 
 // Get Products by Category
-router.get("/categories/:categoryId/products", (req, res) => {
-  res.send('ok');
-});
+router.get("/categories/:categoryId/products");
 
 // List Orders
-router.get("/orders", (req, res) => {
-  res.send('ok');
-});
+router.get("/orders");
 
 // Create Order
-router.post("/orders", (req, res) => {
-  res.send('ok');
-});
+router.post("/orders");
 
 // Change order Status
-router.patch("/orders/:orderId/status", (req, res) => {
-  res.send('ok');
-});
+router.patch("/orders/:orderId/status");
 
 // Delete/Cancel order
-router.delete("/orders/:orderId", (req, res) => {
-  res.send('ok');
-});
+router.delete("/orders/:orderId");
